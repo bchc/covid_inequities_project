@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mask on BCHC COVID-19</title>
+    <link>/tags/mask/</link>
+    <description>Recent content in mask on BCHC COVID-19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mask/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dynata Mask-Wearing Survey Analysis for BCHC Cities</title>
+      <link>/blog/2020/08/18/2020-08-18-dynata-mask-wearing-survey-analysis-for-bchc-cities/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020/08/18/2020-08-18-dynata-mask-wearing-survey-analysis-for-bchc-cities/</guid>
+      <description>IntroductionCompare Estimated Mask Usage across BCHC cities (July 2 - 14)Effect of Mask Mandates on COVID-19MethodologyDynata DatasetMandatory Mask PoliciesIntroductionThe World Health Organization and the U.S. Centers for Disease Control and Prevention recommend using face masks to slow the spread of the COVID-19 virus. However, face coverings have not been as widely adopted in the US during this current epidemic as it has in previous epidemic epidemics (1918 Influenza Pandemic) or as in other countries internationally.</description>
+    </item>
+    
+  </channel>
+</rss>

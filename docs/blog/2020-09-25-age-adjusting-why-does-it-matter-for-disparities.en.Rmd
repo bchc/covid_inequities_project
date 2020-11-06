@@ -1,0 +1,114 @@
+---
+banner: img/banners/banner-age-adj.jpg
+title: Age-Adjusting—why does it matter for disparities?
+author: Alina Schnake-Mahl
+date: '2020-09-25'
+output:
+  blogdown::html_page:
+    toc: true
+slug: age-adjusting-why-does-it-matter-for-disparities
+categories:
+  - disparities
+  - age adjustment
+tags: []
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = F, 
+                      message = F)
+library(tidyverse)
+library(highcharter)
+```
+
+### Un-adjusted Death Rates 
+
+I recently received an email from my microbiologist uncle, asking me to help him interpret Washington state's COVID-19 data. The data didn't seem to match articles he'd read on racial and ethnic inequities in coronovirus deaths. His question seemed a relevant one for many people, inundated with constant COVID-19 data, and who might want further information about how to interpret some of the data they're seeing. 
+
+He wrote, 
+
+*I wonder if you can help me understand some COVID-epi data *
+
+*I have been puzzled that the death rates for the major racial/ethnic groups seem to match their population frequencies almost exactly (e.g. for Hispanics 14% of deaths and 13% of the population).  There are disproportionate numbers of confirmed cases and hospitalization in Hispanic and Black  populations (e.g. for Hispanics, 44% and 30% , respectively, vs 13% of the population).  I often hear and think it seems very plausible that minorities die from COVID-19 at substantially higher rates that whites, so I am trying to reconcile that conclusion with these data. *
+
+### Un-adjusted Age Rates
+
+![Source: As of September 14th https://www.doh.wa.gov/Emergencies/COVID19/DataDashboard](/blog/2020-09-25-age-adjusting-why-does-it-matter-for-disparities.en_files/table_uncle.jpg){width=60%}
+
+
+So what’s going on here? Has Washington state somehow avoided the racial/ethnic disparities in death that we see in other states and the nation as a whole?  
+
+That's unlikely. The more likely answer is that Washington state is displaying the crude death rate, and the age structure in Washington differs substantially by racial/ethnic group. 
+
+Age-adjustment--also termed age standardization-- compares rates after adjusting for differences in the age distribution, and allows us to directly compare two (or more) groups, despite differences in the underlying age distribution of the groups. And importantly, we cannot compare age-adjusted vs crude rates: only crude to crude and age-adjusted to age-adjusted (using the same [reference population](https://www.cdc.gov/nchs/data/statnt/statnt20.pdf), usually the 2000 U.S. standard population) 
+
+So why do we care about this measure generally, and specifically for measuring disparities ? 
+
+### Age Distribution
+
+```{r fig.height=3, fig.width=8}
+
+## Load data 
+url_pop_data= "https://raw.githubusercontent.com/rl627/bchc_covid19_data/master/Clean/blog_df_pop_washington.csv"
+df_pop_washington = read.csv(url_pop_data) %>% as_tibble()
+
+## Format for plot
+dfa = df_pop_washington %>% 
+  mutate(gender = "1",pct=(pct/2)*-1) %>% 
+  bind_rows(df_pop_washington %>% 
+              mutate(gender = "2",pct=pct/2)) %>% 
+  mutate(age_lab = paste0(age,"-",age+4)) %>% 
+  mutate(age_factor = factor(age_lab, levels = unique(.$age_lab))) %>% 
+  mutate(race =recode(race,"NHB"="Non-Hispanic Black")) %>% 
+  mutate(race =factor(race, levels = c("Non-Hispanic White","Hispanic",
+                                       "Non-Hispanic Black","Non-Hispanic Other")))
+
+## Plot
+dfa %>% 
+  ggplot(aes(x = age_factor, y = pct)) + 
+  geom_bar(data = subset(dfa,gender == "1"), stat = "identity") + 
+  geom_bar(date = subset(dfa,gender == "2"), stat = "identity") +   
+  coord_flip() + 
+  theme_bw()+ 
+  labs(x = "Age Group",
+       y = "Proportion of Population")+
+  geom_vline(xintercept = 13.51, lty = 2, col = 'red')+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x  = element_blank())+
+  facet_grid(cols = vars(race))
+```
+
+
+
+The age structure differs by race/ethnicity in the U.S. According to the most recent [census data available](https://www.pewresearch.org/fact-tank/2019/07/30/most-common-age-among-us-racial-ethnic-groups/), the median age for whites was 44 and for non-whites was 31; for Latinos the median age was 30 and for Black Americans it was 34. This means, if we compare mortality (death) rates among the total white and total Black US population, we’re comparing a white population that is, on average, 10 years older than the Black population. That’s not comparing like to like. For a disease like COVID-19, where risk of hospitalization and death increases [sharply with age](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/investigations-discovery/hospitalization-death-by-age.html), these differences matter; the risk of hospitalization is 1.5 times higher and death 2.5 times higher, for people aged 40-49 versus those aged 30-39.  
+
+### Key Insight 
+
+
+So, age adjustment allows us to say, for example, “if white and Black Americans had the same age structure, what would their respective death rates from coronavirus be?” 
+
+I’ve included the national unadjusted (crude) death rates by race ethnicity below to provide an example of why this is important:
+
+
+![*Other groups compared to Whites. Source: using unadjusted and age-adjusted data made available by APM research lab https://www.apmresearchlab.org/covid/deaths-by-race](/blog/2020-09-25-age-adjusting-why-does-it-matter-for-disparities.en_files/disparities_table.PNG){width=80%}
+
+Comparing the rates in non-white populations to whites, we see stark inequities: the death rates among Blacks are 2.2 times that of whites. After age-adjustment, these disparities increase: the death rate among Black Americans increase to 118.8, or 3.6 times that of whites. 
+
+So to answer our previous question, if white and Black Americans had the same age structure, Blacks would die from COVID-19 at a rate 3.6 times that of white Americans, indicative of a large excess burden of disease among the Black population.  
+Further, a [recent study](https://cdn1.sph.harvard.edu/wp-content/uploads/sites/1266/2020/06/20_Bassett-Chen-Krieger_COVID-19_plus_age_working-paper_0612_Vol-19_No-3_with-cover.pdf) suggests that age-adjustment can obscure even larger disparities that emerge after after calculating age-specific death rates- or comparing death rates within age groups. 
+
+**The difference between the crude and age-adjusted rate tells us that many younger Black, Indigenous, Pacific Islander, and Hispanic/Latino Americans are dying of COVID-19 at a national level** These inequities are produced by systems of mutually reinforcing racial, socioeconomic, and cultural conditions that elevate risk of infection, mortality, and death among BIPOC Americans. The BHBC health equity framework, available here, provides a conceptual framework detailing the mechanisms and systems producing racial/ethnic inequities in COVID-19 outcomes. 
+
+Returning to our example of Washington state: the age-adjusted rates, shown below, unfortunately tell a familiar story. We see substantial disparities in death rates for Pacific Islander, Hispanic/Latino, Native American, and Black populations in comparison to the white population, and small disparities for the Asian population. This tells us that the lack of crude disparity was likely in large part due to younger age distributions among the Washington BIPOC population.  
+
+![](/blog/2020-09-25-age-adjusting-why-does-it-matter-for-disparities.en_files/adj_rates.jpg){width=60%}
+
+
+
+
+
+
+*Note: [APM research lab](https://www.apmresearchlab.org/covid/deaths-by-race) provides race/ethnicity stratified COVID-19 data to help highlight inequities in mortality, and served as a data source for this post.*
+
