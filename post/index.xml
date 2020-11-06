@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on BCHC COVID-19</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on BCHC COVID-19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Age-Adjusting—why does it matter for disparities?</title>
+      <link>/post/age-adjusting-why-does-it-matter-for-disparities/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/age-adjusting-why-does-it-matter-for-disparities/</guid>
+      <description>Un-adjusted Death RatesI recently received an email from my microbiologist uncle, asking me to help him interpret Washington state’s COVID-19 data. The data didn’t seem to match articles he’d read on racial and ethnic inequities in coronovirus deaths.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on BCHC COVID-19</title>
+    <link>/blog/</link>
+    <description>Recent content in Blogs on BCHC COVID-19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Age-Adjusting—why does it matter for disparities?</title>
+      <link>/blog/2020/09/25/2020-09-25-age-adjusting-why-does-it-matter-for-disparities/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020/09/25/2020-09-25-age-adjusting-why-does-it-matter-for-disparities/</guid>
+      <description>Un-adjusted Death RatesUn-adjusted Age RatesAge DistributionKey InsightUn-adjusted Death RatesI recently received an email from my microbiologist uncle, asking me to help him interpret Washington state’s COVID-19 data. The data didn’t seem to match articles he’d read on racial and ethnic inequities in coronovirus deaths. His question seemed a relevant one for many people, inundated with constant COVID-19 data, and who might want further information about how to interpret some of the data they’re seeing.</description>
+    </item>
+    
+    <item>
+      <title>Dynata Mask-Wearing Survey Analysis for BCHC Cities</title>
+      <link>/blog/2020/08/18/2020-08-18-dynata-mask-wearing-survey-analysis-for-bchc-cities/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020/08/18/2020-08-18-dynata-mask-wearing-survey-analysis-for-bchc-cities/</guid>
+      <description>IntroductionCompare Estimated Mask Usage across BCHC cities (July 2 - 14)Effect of Mask Mandates on COVID-19MethodologyDynata DatasetMandatory Mask PoliciesIntroductionThe World Health Organization and the U.S. Centers for Disease Control and Prevention recommend using face masks to slow the spread of the COVID-19 virus. However, face coverings have not been as widely adopted in the US during this current epidemic as it has in previous epidemic epidemics (1918 Influenza Pandemic) or as in other countries internationally.</description>
+    </item>
+    
+  </channel>
+</rss>
