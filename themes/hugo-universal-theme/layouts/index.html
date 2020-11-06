@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div id="all">
+
+        {{ partial "top.html" . }}
+
+        {{ partial "nav.html" . }}
+
+      <div class="container">
+        <hr/>
+        <div class="row">
+              <div class="bar background-image-fixed-2 color-white text-center">
+              <div style = "background: rgba(0, 0, 0, 0.5);">
+                <div style = "width: 80%; margin: auto; padding: 10px;">
+                  <h3 class="text-uppercase">COVID-19 Health Inequities in Cities Project</h3>
+                  <p class="lead">Roughly 80% of the US population lives in urban areas and cities are often not only the most dense parts of the US but also contain the most diverse populations. We believe that understanding and fighting the COVID-19 pandemic requires a framework which focuses on cities but also on what drives inequities in cities.</p>
+                
+                      <a href="https://drexel-uhc.shinyapps.io/bchc_covid19/" class="btn btn-template-transparent-black btn-lg" target = "_blank">
+                          Visit Our Dashboard!
+                      </a>
+                </div>
+              </div>
+              </div>
+
+              <hr/>
+              <h3 class="text-uppercase text-center">Overview</h3>
+                <p class="lead">
+                  The COVID-19 pandemic has exposed deeply entrenched inequities in cities across the United States. These inequities are the result of long-standing racial, economic, and social inequities that existed prior to the pandemic. Over the course of the pandemic these inequities have manifested themselves as inequities in access to testing, in incidence, in hospitalization and in mortality related to COVID-19. In this dashboard we provide descriptive data of how COVID-19 related outcomes, and especially inequities in these outcomes, are evolving in the cities that are part of the Big Cities Health Coalition.  We use available data to characterize, compare, and track inequities along three dimensions (1) across populations within cities; (2) across neighborhoods within cities, and (3) across cities. You can find more details on our conceptual framework here, the indicators we use to measure inequities here, and the metrics we use here.  We hope that these data may be useful to the cities as they continue to develop strategies to protect population health and promote health equity. 
+                </p>
+      </div>
+
+      {{ partial "footer.html" . }}
+      
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>

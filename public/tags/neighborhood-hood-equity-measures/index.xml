@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neighborhood Hood Equity Measures on BCHC COVID-19</title>
+    <link>/tags/neighborhood-hood-equity-measures/</link>
+    <description>Recent content in Neighborhood Hood Equity Measures on BCHC COVID-19</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/neighborhood-hood-equity-measures/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Neighborhood Level Equity Measures</title>
+      <link>/blog/2020/10/19/2020-10-19-neighborhood-level-equity-measures/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020/10/19/2020-10-19-neighborhood-level-equity-measures/</guid>
+      <description>Equity MeasureSummary% Poverty% of population whose income has dropped below the poverty level in the past 12 months.ICE - IncomeIndex of Concentration (ICE) compares ACS HH income categories that appriximated cutpoints for the US 20th and 80th household income percentiles. Disadvantaged group includes those whose HH income were less than $25,000; advantaged group were those who were greater than or equal to $100,000.</description>
+    </item>
+    
+  </channel>
+</rss>
